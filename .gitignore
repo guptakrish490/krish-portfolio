@@ -1,0 +1,19 @@
+# Dependencies
+/node_modules/
+
+# Next.js build output
+/.next/
+/out/
+/build/
+
+# Local environment files
+.env*
+!.env.example
+
+# Original input copy; deploy the public copy instead
+/Krish_Gupta_Resume.pdf
+
+# Logs and local tooling
+*.log
+.DS_Store
+*.tsbuildinfo

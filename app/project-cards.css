@@ -1,0 +1,248 @@
+.quest-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid rgba(89, 151, 204, .42);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(27, 116, 178, .18), transparent 42%),
+    linear-gradient(145deg, rgba(12, 26, 45, .97), rgba(5, 10, 20, .98) 72%);
+  box-shadow: inset 0 1px rgba(171, 215, 255, .1), 0 18px 48px rgba(1, 5, 13, .35);
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background-color .28s ease;
+}
+
+.quest-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 7px;
+  border: 1px solid rgba(113, 177, 222, .13);
+  clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 25px 100%, 0 calc(100% - 25px));
+  pointer-events: none;
+  transition: border-color .28s ease;
+}
+
+.quest-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  border-top: 2px solid rgba(107, 213, 246, .8);
+  border-right: 2px solid rgba(107, 213, 246, .8);
+  filter: drop-shadow(0 0 6px rgba(65, 191, 239, .55));
+  pointer-events: none;
+}
+
+.quest-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.quest-card:hover,
+.quest-card:focus-within {
+  transform: translateY(-5px);
+  border-color: rgba(105, 209, 242, .8);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(28, 139, 203, .24), transparent 46%),
+    linear-gradient(145deg, rgba(14, 33, 56, .98), rgba(5, 10, 20, .98) 72%);
+  box-shadow: 0 20px 58px rgba(3, 26, 53, .45), inset 0 1px rgba(188, 230, 255, .16), 0 0 22px rgba(36, 137, 192, .12);
+}
+
+.quest-card:hover::before,
+.quest-card:focus-within::before {
+  border-color: rgba(113, 198, 237, .28);
+}
+
+.quest-card .card-rank {
+  align-items: center;
+  min-height: 30px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(111, 160, 203, .2);
+  color: #91b7dc;
+  font-size: 9px;
+  letter-spacing: .17em;
+}
+
+.quest-card .card-rank::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 9px;
+  border: 1px solid #6edcf0;
+  transform: rotate(45deg);
+  box-shadow: 0 0 9px rgba(75, 214, 240, .6);
+}
+
+.quest-card .card-rank span {
+  margin-left: auto;
+  padding: 5px 9px;
+  border: 1px solid rgba(108, 179, 223, .32);
+  background: linear-gradient(110deg, rgba(33, 86, 130, .26), rgba(14, 29, 50, .52));
+  color: #9adcf5;
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-shadow: 0 0 10px rgba(93, 198, 238, .25);
+}
+
+.quest-card h3 {
+  margin-top: 28px;
+  color: #eff7ff;
+  text-shadow: 0 0 22px rgba(79, 156, 224, .16);
+}
+
+.quest-card h4 {
+  color: #9fc3e3;
+  letter-spacing: .025em;
+}
+
+.quest-card > p {
+  color: #9bacc0;
+  line-height: 1.8;
+}
+
+.quest-card .tech-row {
+  gap: 8px;
+}
+
+.quest-card .tech-row span {
+  padding: 5px 9px;
+  border-color: rgba(91, 153, 200, .3);
+  background: rgba(11, 26, 43, .58);
+  color: #b8d3eb;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.quest-card:hover .tech-row span {
+  border-color: rgba(99, 190, 225, .42);
+  background: rgba(23, 58, 83, .44);
+  color: #d5efff;
+}
+
+.quest-card .dossier-button {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(91, 158, 205, .3);
+  background: linear-gradient(100deg, rgba(23, 57, 88, .42), rgba(10, 22, 38, .48));
+  color: #a8d7f2;
+  letter-spacing: .12em;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.quest-card .dossier-button:hover {
+  border-color: rgba(108, 216, 241, .7);
+  background: rgba(28, 94, 126, .35);
+  color: #e0f8ff;
+}
+
+.quest-card .dossier {
+  animation: dossier-enter .3s ease both;
+  border-top-color: rgba(106, 175, 219, .28);
+}
+
+.quest-card .dossier p {
+  line-height: 1.75;
+}
+
+.quest-card .dossier a {
+  width: fit-content;
+  padding: 9px 12px;
+  border: 1px solid rgba(102, 184, 223, .38);
+  background: rgba(13, 35, 57, .54);
+}
+
+.quest-card.featured-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(230px, .7fr);
+  grid-template-areas:
+    "rank rank"
+    "title tech"
+    "subtitle tech"
+    "description tech"
+    "action action"
+    "details details";
+  column-gap: clamp(24px, 5vw, 70px);
+  align-items: start;
+  padding: 34px;
+  border-color: rgba(101, 184, 223, .55);
+  background:
+    radial-gradient(ellipse at 88% 44%, rgba(21, 109, 168, .2), transparent 39%),
+    linear-gradient(120deg, rgba(13, 33, 57, .98), rgba(6, 13, 24, .98) 68%);
+  box-shadow: inset 0 1px rgba(190, 229, 255, .14), 0 25px 75px rgba(1, 7, 17, .5);
+}
+
+.quest-card.featured-card::after {
+  width: 58px;
+  height: 58px;
+  border-color: rgba(120, 224, 248, .94);
+  filter: drop-shadow(0 0 10px rgba(65, 191, 239, .7));
+}
+
+.featured-card .card-rank { grid-area: rank; }
+.featured-card h3 { grid-area: title; margin-top: 24px; font-size: clamp(32px, 4vw, 46px); }
+.featured-card h4 { grid-area: subtitle; }
+.featured-card > p { grid-area: description; max-width: 660px; }
+.featured-card .tech-row {
+  grid-area: tech;
+  align-self: center;
+  margin: 20px 0;
+  padding: 17px;
+  border: 1px solid rgba(105, 170, 211, .18);
+  background: rgba(4, 13, 25, .42);
+}
+.featured-card .dossier-button { grid-area: action; justify-self: start; margin-top: 8px; }
+.featured-card .dossier { grid-area: details; width: 100%; }
+.dossier-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.dossier-links a { display: inline-flex; align-items: center; gap: 7px; }
+.featured-card .card-rank span {
+  border-color: rgba(130, 195, 245, .52);
+  background: linear-gradient(100deg, rgba(46, 99, 159, .34), rgba(20, 38, 68, .68));
+  color: #c2ddff;
+}
+
+@keyframes dossier-enter {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+  .quest-card.featured-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "rank"
+      "title"
+      "subtitle"
+      "description"
+      "tech"
+      "action"
+      "details";
+    gap: 0;
+  }
+
+  .featured-card .tech-row {
+    align-self: start;
+    margin: 12px 0 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .quest-card,
+  .quest-card.featured-card { padding: 23px 20px; }
+  .quest-card::before { inset: 5px; }
+  .quest-card::after { width: 27px; height: 27px; }
+  .quest-card .card-rank { font-size: 8px; }
+  .quest-card .card-rank span { padding: 4px 6px; font-size: 7px; }
+  .quest-card h3 { font-size: 27px; }
+  .featured-card h3 { font-size: 34px; }
+  .featured-card .tech-row { padding: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quest-card,
+  .quest-card .tech-row span,
+  .quest-card .dossier-button { transition: none; }
+  .quest-card .dossier { animation: none; }
+}

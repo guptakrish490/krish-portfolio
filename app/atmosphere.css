@@ -1,0 +1,10 @@
+.refactor-shell{position:relative;isolation:isolate;overflow-x:clip;overflow-y:visible;min-height:100vh;background:transparent!important}
+.atmosphere-layer{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#050711}
+.global-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;pointer-events:none!important;opacity:.88}
+.scene-loading{position:absolute;inset:0;display:grid;place-items:center;color:#83adff;font:10px 'DM Mono',monospace;letter-spacing:.14em}
+.atmosphere-layer:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 38%,transparent 5%,rgba(4,6,14,.23) 52%,rgba(4,6,14,.77) 100%),linear-gradient(180deg,rgba(4,6,14,.24),rgba(4,6,14,.63));pointer-events:none}
+.refactor-shell>section,.refactor-shell>footer{position:relative;z-index:1;background:linear-gradient(180deg,rgba(5,8,18,.32),rgba(5,8,18,.58))}
+.fixed-nav{z-index:30}.edge-hud{z-index:15}.cinematic-boot{z-index:100}
+.hero-new{background:radial-gradient(ellipse at 75% 48%,rgba(89,64,177,.1),transparent 46%)}
+@media(max-width:520px){.atmosphere-layer{opacity:.82}}
+:where(a,button,[tabindex]):focus-visible{outline:2px solid #72e3df;outline-offset:4px;box-shadow:0 0 0 4px rgba(114,227,223,.18)}

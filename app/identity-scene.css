@@ -1,0 +1,36 @@
+.hero-new-visual{height:min(690px,calc(100vh - 110px));min-height:540px;overflow:visible;isolation:isolate;background:transparent}
+.figure-scene{position:absolute;inset:0;perspective:1200px;transform-style:preserve-3d;isolation:isolate;display:grid;place-items:center}
+.figure-aura{position:absolute;z-index:0;inset:9% 8% 3%;border-radius:50%;background:radial-gradient(ellipse at 50% 48%,rgba(37,151,255,.16),rgba(35,92,203,.11) 33%,rgba(23,119,190,.05) 55%,transparent 74%);filter:blur(15px);animation:aura-breathe 7s ease-in-out infinite}
+.figure-scene:before{content:"";position:absolute;z-index:0;inset:6% 6% 0;background:radial-gradient(ellipse at 50% 91%,rgba(77,139,255,.24),transparent 40%);filter:blur(24px);opacity:.75;pointer-events:none}
+.dungeon-gate{position:absolute;z-index:1;inset:-3% -8%;pointer-events:none;opacity:.92;filter:drop-shadow(0 0 17px rgba(42,139,255,.2))}
+.dungeon-gate canvas{display:block!important;width:100%!important;height:100%!important}
+.awakened-portrait{position:absolute;z-index:20;bottom:-1%;left:50%;height:98%;width:auto;max-width:112%;object-fit:contain;object-position:center bottom;transform:translate3d(-50%,0,30px);filter:drop-shadow(0 0 18px rgba(101,138,251,.22)) drop-shadow(0 0 54px rgba(105,75,195,.19));animation:portrait-arrive 1.3s cubic-bezier(.18,.72,.24,1) both,portrait-breathe 6.5s 1.3s ease-in-out infinite;transition:filter .4s;pointer-events:none}
+.figure-scene:hover .awakened-portrait{filter:drop-shadow(0 0 24px rgba(114,163,255,.36)) drop-shadow(0 0 72px rgba(126,78,222,.29))}
+.figure-shadow{position:absolute;z-index:3;bottom:1%;left:50%;width:52%;height:7%;transform:translateX(-50%) perspective(150px) rotateX(52deg);background:radial-gradient(ellipse,rgba(113,98,229,.55),rgba(63,161,184,.12) 47%,transparent 72%);filter:blur(8px);animation:platform-pulse 5s ease-in-out infinite}
+.stage-platform{position:absolute;z-index:4;bottom:2%;left:50%;width:57%;height:12%;transform:translateX(-50%) perspective(380px) rotateX(62deg);clip-path:polygon(50% 0,100% 47%,50% 100%,0 47%);border:1px solid rgba(127,206,232,.48);background:linear-gradient(135deg,rgba(65,113,174,.4),rgba(78,51,147,.36) 54%,rgba(51,151,166,.35));box-shadow:0 0 26px rgba(105,134,235,.28)}
+.stage-platform:before{content:"";position:absolute;inset:4px;clip-path:inherit;border:1px solid rgba(178,199,255,.42);background:radial-gradient(ellipse,rgba(139,137,237,.35),rgba(8,14,31,.35) 70%)}
+.stage-platform i{position:absolute;z-index:2;top:43%;width:12px;height:12px;transform:rotate(45deg);border:1px solid #9de5eb;box-shadow:0 0 12px #70d6e3}
+.stage-platform i:first-child{left:18%}.stage-platform i:nth-child(2){right:18%;border-color:#bd9bff;box-shadow:0 0 12px #9c7af3}
+.identity-plaque{position:absolute;z-index:30;left:2%;bottom:19%;display:grid;gap:5px;padding:12px 15px;border-left:2px solid #70d6e3;background:linear-gradient(90deg,rgba(7,13,27,.88),rgba(7,13,27,.24));backdrop-filter:blur(8px);box-shadow:0 7px 24px rgba(0,0,0,.18);transform:translateZ(55px)}
+.identity-plaque span,.identity-plaque small{font:8px 'DM Mono';letter-spacing:.12em;color:#8da8d0}.identity-plaque strong{font:600 14px Manrope;letter-spacing:.04em;color:#eef3ff}.identity-plaque small{color:#66d5dc}
+.visual-readout{z-index:25;right:1%;top:auto;bottom:19%;text-align:left;padding:11px 13px;border-left:1px solid rgba(161,136,255,.65);background:linear-gradient(90deg,rgba(9,12,26,.08),rgba(9,12,26,.75));backdrop-filter:blur(7px);line-height:1.8}
+@keyframes aura-breathe{0%,100%{transform:scale(.92);opacity:.62}50%{transform:scale(1.08);opacity:1}}
+@keyframes portrait-arrive{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+@keyframes portrait-breathe{0%,100%{translate:0 0}50%{translate:0 -5px}}
+@keyframes platform-pulse{0%,100%{opacity:.55;scale:.88 1}50%{opacity:1;scale:1.06 1}}
+@media(max-width:850px){.hero-new-visual{height:560px}.figure-scene{inset:0 -3%}.identity-plaque{left:0}.visual-readout{right:0}}
+@media(max-width:520px){.hero-new-visual{height:455px;min-height:0;margin-top:8px}.figure-scene{inset:0 -7%}.dungeon-gate{inset:-1% -13%;opacity:.88}.awakened-portrait{height:97%;max-width:125%}.identity-plaque{left:0;bottom:17%;padding:8px 10px}.identity-plaque span,.identity-plaque small{font-size:7px}.identity-plaque strong{font-size:11px}.visual-readout{top:auto;right:0;bottom:17%;font-size:8px;padding:8px}.stage-platform{width:65%}}
+@media(prefers-reduced-motion:reduce){.figure-aura,.awakened-portrait,.figure-shadow{animation:none!important}.awakened-portrait{opacity:1;translate:0 0}}
+
+@media(max-width:520px){
+  .hero-new{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:102px 7vw 42px}
+  .hero-new-copy{display:contents}
+  .hero-new-copy>.sys-label{order:0}
+  .hero-new-copy>.hero-identity{order:1;margin:15px 0 12px}
+  .hero-new h1{order:2;font-size:clamp(40px,12vw,48px);line-height:.96}
+  .hero-new-visual{order:3;width:100%;height:clamp(292px,88vw,340px);min-height:0;margin:3px auto 8px}
+  .hero-new-copy>p{order:4;margin:10px 0 18px;font-size:14px;line-height:1.7}
+  .hero-buttons{order:5;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 23px}
+  .hero-buttons>a{justify-content:center;padding:10px 7px;font-size:8px;white-space:nowrap}
+  .hero-facts{order:6;gap:14px;padding-top:14px}
+}

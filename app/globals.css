@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #050711;
+  color: #e7edf6;
+  font-family: Manrope, Arial, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; color: inherit; }
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid #72e3df;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px rgba(114, 227, 223, .18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
