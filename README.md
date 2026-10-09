@@ -2,7 +2,7 @@
 
 > A backend-focused Computer Science student building practical software and exploring the engineering behind reliable systems.
 
-**Portfolio:** [Live Website](#) · **GitHub:** [@guptakrish490](https://github.com/guptakrish490)
+**Portfolio:** [Live Website](https://krishgupta-portfolio.vercel.app) · **GitHub:** [@guptakrish490](https://github.com/guptakrish490)
 
 ---
 
@@ -200,9 +200,8 @@ The exact structure may evolve as the portfolio is refactored.
 I'm interested in backend engineering, software development internships, open-source contributions, and opportunities to learn from engineers building reliable software.
 
 * **GitHub:** [github.com/guptakrish490](https://github.com/guptakrish490)
-* **Portfolio:** Add your deployed website URL here.
-* **LinkedIn:** Add your LinkedIn profile URL here.
-* **Email:** Add your professional contact email here.
+* **Portfolio:** [View here](https://krishgupta-portfolio.vercel.app/)
+* **LinkedIn:** [Connect](https://www.linkedin.com/in/krish-gupta-0a937a386)
 
 ---
 
