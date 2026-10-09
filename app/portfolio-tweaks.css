@@ -171,3 +171,13 @@
   .dsa-categories { grid-template-columns: 1fr; margin-top: 28px; }
   .dsa-categories article > div { align-items: flex-start; flex-direction: column; }
 }
+
+
+.hero-new::before{
+  pointer-events: none;
+}
+
+.hero-buttons{
+  position: relative;
+  z-index: 3;
+}
